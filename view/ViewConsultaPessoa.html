@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Contatos</title>
+    <link rel="stylesheet" href="/css/ViewConsultaPessoa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <h1 id="titulo">Contatos</h1>
+        <div class="divBusca">
+            <input type="text" id="inputPesquisa" placeholder="Pesquisar por nome...">
+            <button id="btnPesquisar">Buscar</button>
+        </div>
+            <button id="btnIncluir">+ Incluir</button>
+        <table id="tabelaPessoas">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Os dados da consulta serão injetados aqui via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <!-- Modal de Visualização/Alteração -->
+    <div id="modalCadastro" class="modal">
+        <div class="modal-conteudo">
+            <span class="btn-fechar">&times;</span>
+            <h2 id="tituloModal">Cadastrar Nova Pessoa</h2>
+            <form id="formCadastro">
+                <input type="hidden" id="pessoaId">
+                <div class="form-grupo">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" required placeholder="Digite o nome...">
+                </div>
+                <div class="form-grupo">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" required placeholder="000.000.000-00" maxlength="14">
+                </div>
+                <button type="submit" id="btnSalvar" style="background-color: #28a745; width: 100%;">Salvar</button>
+            </form>
+            <!-- SEÇÃO DE CONTATOS -->
+            <div id="secaoContatos" style="display: none; border-top: 1px solid #ddd; margin-top: 15px; padding-top: 15px;">
+                <h3>Contatos Vinculados</h3>
+                <form id="formAdicionarContato" class="busca-box" style="margin-bottom: 15px;">
+                    <select id="contatoTipo" required style="padding: 10px; border-radius: 4px; border: 1px solid #ccc;">
+                        <option value="1">Telefone</option>
+                        <option value="2">Email</option>
+                    </select>
+                    <input type="text" id="contatoDescricao" required placeholder="Descrição..." style="flex: 1;">
+                    <button type="submit" style="background-color: #007bff;">+</button>
+                </form>
+                <table id="tabelaContatos" style="font-size: 14px;">
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Descrição</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Os dados da tela serão injetados aqui via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="/js/ViewConsultaPessoa.js"></script>
+</body>
+</html>
