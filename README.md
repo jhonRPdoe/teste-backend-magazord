@@ -34,7 +34,7 @@ Certifique-se de ter o **Docker** instalado na sua máquina.
    php bin/doctrine.php orm:schema-tool:create
    ```
 6. O sistema estará pronto e disponível para acesso através do seu navegador no endereço:
-   **`http://localhost:8080`**
+   **`http://localhost:8080/pessoas`**
 
 ## 🧪 Como Executar os Testes Unitários
 
